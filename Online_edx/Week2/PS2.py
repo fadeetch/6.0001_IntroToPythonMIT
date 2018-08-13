@@ -15,9 +15,12 @@ def isWordGuessed(secretWord, lettersGuessed):
         return False
     
     
-    
-
 def getGuessedWord(secretWord, lettersGuessed):
+    '''
+    secretWord: string, the word the user is guessing
+    lettersGuessed: list, what letters have been guessed so far
+    returns: string with guessed letters from the secretWord
+    '''
     new_s = []
     
     for i in secretWord:
@@ -27,3 +30,8 @@ def getGuessedWord(secretWord, lettersGuessed):
             new_s.append("_ ")
         
     return ''.join(str(e) for e in new_s)
+
+
+print(getGuessedWord('apple', ['e', 'i', 'k', 'p', 'r', 's']))
+print(getGuessedWord('durian', ['a', 'c', 'd', 'h', 'i', 'm', 'n', 'r', 't', 'u']))
+print(getGuessedWord('lettuce', ['e', 'h', 'a', 'y', 'b', 'u', 't', 'g', 'x', 'k']))
