@@ -1,4 +1,3 @@
-
 def isWordGuessed(secretWord, lettersGuessed):
     '''
     secretWord: string, the word the user is guessing
@@ -14,7 +13,11 @@ def isWordGuessed(secretWord, lettersGuessed):
     else:
         return False
     
-    
+
+
+
+
+
 def getGuessedWord(secretWord, lettersGuessed):
     '''
     secretWord: string, the word the user is guessing
@@ -35,3 +38,32 @@ def getGuessedWord(secretWord, lettersGuessed):
 print(getGuessedWord('apple', ['e', 'i', 'k', 'p', 'r', 's']))
 print(getGuessedWord('durian', ['a', 'c', 'd', 'h', 'i', 'm', 'n', 'r', 't', 'u']))
 print(getGuessedWord('lettuce', ['e', 'h', 'a', 'y', 'b', 'u', 't', 'g', 'x', 'k']))
+
+
+
+
+
+
+
+def getAvailableLetters(lettersGuessed):
+    '''
+    lettersGuessed: list, what letters have been guessed so far
+    returns: string, comprised of letters that represents what letters have not
+      yet been guessed.
+    '''
+    # FILL IN YOUR CODE HERE...
+    letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    lowercase_letters = [x.lower() for x in letters]
+
+
+    l = []
+    for element in lowercase_letters:
+        if element not in lettersGuessed:
+            l.append(element)
+    return ''.join(str(e) for e in l)
+
+
+
+print(getAvailableLetters(['e', 'i', 'k', 'p', 'r', 's']))
+print(getAvailableLetters(['n', 'v', 'r', 'y', 'x', 'i', 'c', 'z', 'q', 's', 't', 'k']))
+
